@@ -1,0 +1,239 @@
+{
+  "healthTips": [
+    {
+      "title": "10 Tips for a Healthy Heart",
+      "readTime": "5 min read",
+      "imageUrl": "assets/images/hospital_169be524.jpg",
+      "category": "Heart Health",
+      "author": "Dr. Sarah Johnson",
+      "datePublished": "Oct 12, 2026",
+      "content": "Your heart is the engine of your body. Keeping it healthy is essential for a long and vibrant life. Here are the top tips to keep your cardiovascular system in peak condition:\n\n**1. Stay Active**\nAim for at least 30 minutes of moderate exercise every day. Whether it's a brisk walk, swimming, or cycling, moving your body strengthens the heart muscle.\n\n**2. Eat a Heart-Healthy Diet**\nIncorporate more fruits, vegetables, whole grains, and lean proteins into your meals. Limit saturated fats, sodium, and added sugars to reduce the risk of plaque buildup in your arteries.\n\n**3. Manage Stress**\nChronic stress can take a toll on your heart. Practice relaxation techniques like deep breathing, meditation, or yoga to keep stress levels in check.\n\n**4. Get Enough Sleep**\nLack of sleep is linked to higher blood pressure and an increased risk of heart disease. Aim for 7-9 hours of quality sleep each night to allow your body to heal and recharge.\n\nBy making these small but impactful changes to your daily routine, you can significantly lower your risk of cardiovascular disease and enjoy a healthier, more energetic life."
+    },
+    {
+      "title": "Managing Stress at Work",
+      "readTime": "3 min read",
+      "imageUrl": "assets/images/hospital_bb01be9f.jpg",
+      "category": "Mental Health",
+      "author": "Dr. Michael Chen",
+      "datePublished": "Oct 10, 2026",
+      "content": "Workplace stress is incredibly common, but letting it go unmanaged can lead to burnout and long-term health issues. Learning how to manage stress effectively is key to maintaining both productivity and well-being.\n\n**Recognize the Signs**\nThe first step is recognizing how stress manifests for you. It could be physical (headaches, tension), emotional (irritability, anxiety), or behavioral (procrastination).\n\n**Take Micro-Breaks**\nDon't wait for your lunch hour to take a break. Incorporate 5-minute micro-breaks throughout your day. Stand up, stretch, or simply close your eyes and focus on your breathing.\n\n**Establish Boundaries**\nIn an era of constant connectivity, it's vital to unplug. Set clear boundaries for when you are \"off the clock.\" Avoid checking work emails late at night or on weekends unless it's an absolute emergency.\n\nRemember, taking care of your mental health is not a luxury; it's a necessity for sustained success and happiness."
+    },
+    {
+      "title": "Benefits of Morning Walks",
+      "readTime": "4 min read",
+      "imageUrl": "assets/images/hospital_35bbb0ad.jpg",
+      "category": "Fitness",
+      "author": "Emily Davis, PT",
+      "datePublished": "Oct 08, 2026",
+      "content": "Starting your day with a morning walk is one of the simplest and most effective habits you can adopt for overall wellness. It sets a positive tone for the entire day.\n\n**Boost Your Energy**\nWalking in the morning increases your circulation and oxygen supply, giving you a natural energy boost that can last throughout the day\u2014often more effectively than a cup of coffee.\n\n**Improve Mental Clarity**\nThe fresh air and rhythmic movement help clear your mind. Many people find that their best ideas and problem-solving abilities occur during or immediately after a morning walk.\n\n**Consistency is Key**\nTo reap the most benefits, try to make it a daily habit. Even a 15-minute walk around the block can make a significant difference over time."
+    },
+    {
+      "title": "Better Sleep Hygiene",
+      "readTime": "6 min read",
+      "imageUrl": "assets/images/hospital_b48f5ded.jpg",
+      "category": "Wellness",
+      "author": "Dr. Robert Wilson",
+      "datePublished": "Oct 05, 2026",
+      "content": "Good sleep hygiene refers to the practices and habits that are conducive to sleeping well on a regular basis. It's not just about the quantity of sleep, but the quality.\n\n**Create a Sleep Sanctuary**\nYour bedroom should be optimized for sleep. Keep it dark, quiet, and cool. Invest in a comfortable mattress and pillows.\n\n**Digital Detox Before Bed**\nThe blue light emitted by screens interferes with the production of melatonin, the sleep hormone. Try to avoid screens for at least an hour before bedtime. Read a book or listen to calming music instead.\n\n**Consistent Schedule**\nGoing to bed and waking up at the same time every day, even on weekends, helps regulate your body's internal clock and can help you fall asleep and stay asleep for the night."
+    }
+  ],
+  "doctorsList": [
+    {
+      "name": "Dr. Sarah Johnson",
+      "specialty": "Cardiologist",
+      "hospital": "City Heart Center",
+      "rating": 4.9,
+      "reviewCount": 320,
+      "fee": "\u0e3f500",
+      "isAvailable": true,
+      "avatarUrl": "assets/images/avatar_d722c5b2.jpg",
+      "distance": 2.3
+    },
+    {
+      "name": "Dr. Michael Chen",
+      "specialty": "Neurologist",
+      "hospital": "NeuroLife Hospital",
+      "rating": 4.8,
+      "reviewCount": 187,
+      "fee": "\u0e3f800",
+      "isAvailable": true,
+      "avatarUrl": "assets/images/avatar_54a6ba32.jpg",
+      "distance": 5.1
+    },
+    {
+      "name": "Dr. Emily Rodriguez",
+      "specialty": "Dermatologist",
+      "hospital": "Skin Care Clinic",
+      "rating": 4.7,
+      "reviewCount": 312,
+      "fee": "\u0e3f450",
+      "isAvailable": false,
+      "avatarUrl": "assets/images/avatar_15775966.jpg",
+      "distance": 1.8
+    },
+    {
+      "name": "Dr. James Wilson",
+      "specialty": "Orthopedist",
+      "hospital": "Bone & Joint Institute",
+      "rating": 4.6,
+      "reviewCount": 156,
+      "fee": "\u0e3f600",
+      "isAvailable": true,
+      "avatarUrl": "assets/images/avatar_35b72d99.jpg",
+      "distance": 8.4
+    },
+    {
+      "name": "Dr. Priya Patel",
+      "specialty": "Pediatrician",
+      "hospital": "Children's Wellness Hub",
+      "rating": 4.9,
+      "reviewCount": 421,
+      "fee": "\u0e3f350",
+      "isAvailable": true,
+      "avatarUrl": "assets/images/avatar_687ab228.jpg",
+      "distance": 3.2
+    },
+    {
+      "name": "Dr. Robert Kim",
+      "specialty": "Cardiologist",
+      "hospital": "HeartCare Medical",
+      "rating": 4.5,
+      "reviewCount": 198,
+      "fee": "\u0e3f700",
+      "isAvailable": false,
+      "avatarUrl": "assets/images/avatar_cd91f9f3.jpg",
+      "distance": 6.7
+    },
+    {
+      "name": "Dr. Lisa Thompson",
+      "specialty": "Neurologist",
+      "hospital": "BrainHealth Center",
+      "rating": 4.8,
+      "reviewCount": 267,
+      "fee": "\u0e3f900",
+      "isAvailable": true,
+      "avatarUrl": "assets/images/avatar_d89d320d.jpg",
+      "distance": 4.5
+    },
+    {
+      "name": "Dr. David Martinez",
+      "specialty": "Dermatologist",
+      "hospital": "DermaCare Plus",
+      "rating": 4.4,
+      "reviewCount": 143,
+      "fee": "\u0e3f400",
+      "isAvailable": true,
+      "avatarUrl": "assets/images/avatar_847a822e.jpg",
+      "distance": 2.9
+    },
+    {
+      "name": "Dr. Ananya Sharma",
+      "specialty": "Psychiatrist",
+      "hospital": "MindWell Clinic",
+      "rating": 4.7,
+      "reviewCount": 205,
+      "fee": "\u0e3f550",
+      "isAvailable": true,
+      "avatarUrl": "assets/images/avatar_8cec4148.jpg",
+      "distance": 3.8
+    },
+    {
+      "name": "Dr. Tom Baker",
+      "specialty": "Dentist",
+      "hospital": "Bright Smile Dental",
+      "rating": 4.6,
+      "reviewCount": 178,
+      "fee": "\u0e3f300",
+      "isAvailable": false,
+      "avatarUrl": "assets/images/avatar_bacdc66e.jpg",
+      "distance": 1.2
+    }
+  ],
+  "upcomingAppointments": [
+    {
+      "doctorName": "Dr. Sarah Johnson",
+      "specialty": "Cardiologist",
+      "avatarUrl": "assets/images/avatar_d722c5b2.jpg",
+      "dateTime": "2026-05-05T10:30:00.000",
+      "durationMinutes": 30,
+      "type": "videoCall",
+      "status": "confirmed"
+    },
+    {
+      "doctorName": "Dr. Michael Chen",
+      "specialty": "Neurologist",
+      "avatarUrl": "assets/images/avatar_54a6ba32.jpg",
+      "dateTime": "2026-05-05T14:00:00.000",
+      "durationMinutes": 45,
+      "type": "inPerson",
+      "status": "pending"
+    },
+    {
+      "doctorName": "Dr. Priya Patel",
+      "specialty": "Pediatrician",
+      "avatarUrl": "assets/images/avatar_687ab228.jpg",
+      "dateTime": "2026-05-06T09:00:00.000",
+      "durationMinutes": 30,
+      "type": "videoCall",
+      "status": "confirmed"
+    },
+    {
+      "doctorName": "Dr. James Wilson",
+      "specialty": "Orthopedist",
+      "avatarUrl": "assets/images/avatar_35b72d99.jpg",
+      "dateTime": "2026-05-07T11:15:00.000",
+      "durationMinutes": 60,
+      "type": "inPerson",
+      "status": "confirmed"
+    }
+  ],
+  "completedAppointments": [
+    {
+      "doctorName": "Dr. Emily Rodriguez",
+      "specialty": "Dermatologist",
+      "avatarUrl": "assets/images/avatar_15775966.jpg",
+      "dateTime": "2026-04-28T10:00:00.000",
+      "durationMinutes": 30,
+      "type": "inPerson",
+      "status": "completed"
+    },
+    {
+      "doctorName": "Dr. Lisa Thompson",
+      "specialty": "Neurologist",
+      "avatarUrl": "assets/images/avatar_d89d320d.jpg",
+      "dateTime": "2026-04-25T15:30:00.000",
+      "durationMinutes": 45,
+      "type": "videoCall",
+      "status": "completed"
+    },
+    {
+      "doctorName": "Dr. Sarah Johnson",
+      "specialty": "Cardiologist",
+      "avatarUrl": "assets/images/avatar_d722c5b2.jpg",
+      "dateTime": "2026-04-20T09:00:00.000",
+      "durationMinutes": 30,
+      "type": "videoCall",
+      "status": "completed"
+    }
+  ],
+  "cancelledAppointments": [
+    {
+      "doctorName": "Dr. Robert Kim",
+      "specialty": "Cardiologist",
+      "avatarUrl": "assets/images/avatar_cd91f9f3.jpg",
+      "dateTime": "2026-04-22T13:00:00.000",
+      "durationMinutes": 30,
+      "type": "inPerson",
+      "status": "cancelled"
+    },
+    {
+      "doctorName": "Dr. David Martinez",
+      "specialty": "Dermatologist",
+      "avatarUrl": "assets/images/avatar_847a822e.jpg",
+      "dateTime": "2026-04-18T11:00:00.000",
+      "durationMinutes": 45,
+      "type": "videoCall",
+      "status": "cancelled"
+    }
+  ]
+}

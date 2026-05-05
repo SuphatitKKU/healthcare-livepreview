@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediPulse — Healthcare & Doctor Appointment App with Flutter</title>
+    <meta name="description" content="Production-ready Flutter healthcare app template with 40+ screens, Dark Mode, Doctor Booking, Telemedicine, and more. Save 250+ hours of development.">
+    <meta property="og:title" content="MediPulse — Flutter Healthcare App Template">
+    <meta property="og:description" content="40+ premium screens, Dark & Light Mode, Clean Architecture. Build your healthcare app in days.">
+    <meta property="og:type" content="website">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #1A73E8;
+            --primary-dark: #0d47a1;
+            --primary-glow: rgba(26, 115, 232, 0.15);
+            --bg-dark: #f8f9fa; /* Now light background */
+            --bg-card: #ffffff; /* White cards */
+            --text-primary: #111827; /* Dark text */
+            --text-muted: #6b7280; /* Gray text */
+            --accent-green: #10b981;
+            --accent-red: #ef4444;
+            --accent-purple: #8b5cf6;
+            --border: rgba(0, 0, 0, 0.08); /* Darker border for light theme */
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            overflow: hidden;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(26, 115, 232, 0.15) 0%, transparent 70%);
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(124, 92, 252, 0.1) 0%, transparent 70%);
+            animation: float 10s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(30px, -40px); }
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            gap: 80px;
+            max-width: 1200px;
+            width: 100%;
+            z-index: 2;
+        }
+
+        .hero-text {
+            flex: 1;
+            max-width: 520px;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(0, 214, 143, 0.1);
+            border: 1px solid rgba(0, 214, 143, 0.2);
+            color: var(--accent-green);
+            padding: 8px 16px;
+            border-radius: 100px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            letter-spacing: 0.5px;
+        }
+
+        .badge::before { content: '🚀'; }
+
+        .hero-text h1 {
+            font-size: 56px;
+            font-weight: 900;
+            line-height: 1.1;
+            letter-spacing: -2px;
+            margin-bottom: 20px;
+        }
+
+        .hero-text h1 .gradient-text {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent-purple) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-text p {
+            font-size: 18px;
+            color: var(--text-muted);
+            line-height: 1.7;
+            margin-bottom: 36px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 32px;
+            border-radius: 14px;
+            font-size: 16px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            box-shadow: 0 8px 30px var(--primary-glow);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(26, 115, 232, 0.5);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--text-primary);
+            border: 2px solid var(--border);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--primary);
+            background: rgba(26, 115, 232, 0.05);
+            transform: translateY(-3px);
+        }
+
+        /* ===== PHONE MOCKUP ===== */
+        .phone-container {
+            flex-shrink: 0;
+            position: relative;
+        }
+
+        .phone-frame {
+            width: 418px; /* iPhone 14: 390px screen + 28px padding */
+            height: 872px; /* iPhone 14: 844px screen + 28px padding */
+            background: #000000; /* Black bezel */
+            border-radius: 54px;
+            padding: 14px;
+            box-shadow:
+                0 0 0 2px #d1d5db, /* Silver rim */
+                0 40px 80px rgba(0, 0, 0, 0.15),
+                0 0 120px var(--primary-glow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .phone-notch {
+            position: absolute;
+            top: 14px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 140px;
+            height: 32px;
+            background: #000000;
+            border-radius: 0 0 20px 20px;
+            z-index: 10;
+        }
+
+        .phone-screen {
+            width: 100%;
+            height: 100%;
+            border-radius: 40px;
+            overflow: hidden;
+            background: #ffffff;
+            position: relative;
+        }
+
+        .phone-screen iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 40px;
+            pointer-events: auto;
+        }
+
+        /* Watermark overlay on top of iframe */
+        .watermark-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+            z-index: 5;
+            border-radius: 40px;
+            background: repeating-linear-gradient(
+                -45deg,
+                transparent,
+                transparent 200px,
+                rgba(26, 115, 232, 0.03) 200px,
+                rgba(26, 115, 232, 0.03) 201px
+            );
+        }
+
+        .watermark-overlay::after {
+            content: 'DEMO PREVIEW';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-30deg);
+            font-size: 28px;
+            font-weight: 900;
+            color: rgba(26, 115, 232, 0.07);
+            letter-spacing: 8px;
+            white-space: nowrap;
+        }
+
+        .phone-glow {
+            position: absolute;
+            top: -20%;
+            left: -20%;
+            width: 140%;
+            height: 140%;
+            background: radial-gradient(ellipse, var(--primary-glow) 0%, transparent 60%);
+            z-index: -1;
+            animation: pulse-glow 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% { opacity: 0.5; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.05); }
+        }
+
+        /* ===== FEATURES SECTION ===== */
+        .features {
+            padding: 120px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+
+        .section-header h2 {
+            font-size: 42px;
+            font-weight: 800;
+            letter-spacing: -1.5px;
+            margin-bottom: 16px;
+        }
+
+        .section-header p {
+            font-size: 18px;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .feature-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 36px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .feature-card:hover {
+            border-color: rgba(26, 115, 232, 0.3);
+            transform: translateY(-6px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+        }
+
+        .feature-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .feature-card p {
+            font-size: 15px;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* ===== STATS BAR ===== */
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 64px;
+            padding: 60px 40px;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            margin: 0 40px;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 48px;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--primary), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-top: 4px;
+            font-weight: 500;
+        }
+
+        /* ===== CTA SECTION ===== */
+        .cta {
+            text-align: center;
+            padding: 120px 40px;
+            position: relative;
+        }
+
+        .cta h2 {
+            font-size: 48px;
+            font-weight: 900;
+            letter-spacing: -2px;
+            margin-bottom: 16px;
+        }
+
+        .cta p {
+            font-size: 18px;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .price-tag {
+            display: inline-flex;
+            align-items: baseline;
+            gap: 12px;
+            margin-bottom: 32px;
+        }
+
+        .price-old {
+            font-size: 24px;
+            color: var(--text-muted);
+            text-decoration: line-through;
+        }
+
+        .price-new {
+            font-size: 56px;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--accent-green), #00b878);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: var(--text-muted);
+            font-size: 14px;
+            border-top: 1px solid var(--border);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 900px) {
+            .hero-content {
+                flex-direction: column-reverse;
+                text-align: center;
+                gap: 40px;
+            }
+            .hero-text h1 { font-size: 36px; }
+            .hero-buttons { justify-content: center; }
+            .phone-frame { width: 320px; height: 667px; }
+            .stats { flex-wrap: wrap; gap: 32px; }
+            .cta h2 { font-size: 32px; }
+            .section-header h2 { font-size: 32px; }
+        }
+
+        /* ===== ANTI-DEVTOOLS ===== */
+        .devtools-warning {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: var(--bg-dark);
+            z-index: 99999;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 16px;
+            color: var(--text-primary);
+            font-size: 24px;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+    <!-- DevTools Warning Overlay -->
+    <div class="devtools-warning" id="devtools-warning">
+        <div style="font-size: 64px;">🔒</div>
+        <div>Source Code Protected</div>
+        <p style="font-size: 16px; color: var(--text-muted); font-weight: 400; max-width: 400px; text-align: center; line-height: 1.6;">
+            This is a demo preview. Please close Developer Tools to continue browsing.<br>
+            <a href="#cta" style="color: var(--primary); text-decoration: underline;">Purchase the full source code on Gumroad →</a>
+        </p>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>
+                    Build Your<br>
+                    <span class="gradient-text">Healthcare App</span><br>
+                    In Days, Not Months
+                </h1>
+                <p>
+                    MediPulse is a production-ready Flutter app template with 40+ premium screens,
+                    Dark & Light mode, Doctor Booking, Telemedicine, and clean architecture.
+                    Save 250+ hours of development.
+                </p>
+            </div>
+
+            <div class="phone-container" id="demo">
+                <div class="phone-glow"></div>
+                <div class="phone-frame">
+                    <div class="phone-notch"></div>
+                    <div class="phone-screen">
+                        <!--
+                            TODO: Replace the src below with your Flutter Web build.
+                            Steps:
+                            1. Run: flutter build web --release
+                            2. Copy build/web/* into preview-site/app/
+                            3. Change src to "app/index.html"
+                        -->
+                        <iframe
+                            src="app/index.html"
+                            title="MediPulse Live Demo"
+                            sandbox="allow-scripts allow-same-origin allow-popups allow-forms allow-modals"
+                            loading="lazy"
+                        ></iframe>
+                        <div class="watermark-overlay"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- ===== PROTECTION SCRIPTS ===== -->
+    <script>
+        // 1. Disable right-click
+        document.addEventListener('contextmenu', e => e.preventDefault());
+
+        // 2. Block keyboard shortcuts (F12, Ctrl+Shift+I/J/C, Ctrl+U)
+        document.addEventListener('keydown', e => {
+            if (
+                e.key === 'F12' ||
+                (e.ctrlKey && e.shiftKey && ['I','J','C'].includes(e.key.toUpperCase())) ||
+                (e.ctrlKey && e.key.toUpperCase() === 'U') ||
+                (e.ctrlKey && e.key.toUpperCase() === 'S')
+            ) {
+                e.preventDefault();
+                return false;
+            }
+        });
+
+        // 3. DevTools detection (window size heuristic)
+        const devtoolsWarning = document.getElementById('devtools-warning');
+        let devtoolsOpen = false;
+
+        function checkDevTools() {
+            const threshold = 160;
+            const widthDiff = window.outerWidth - window.innerWidth > threshold;
+            const heightDiff = window.outerHeight - window.innerHeight > threshold;
+
+            if (widthDiff || heightDiff) {
+                if (!devtoolsOpen) {
+                    devtoolsOpen = true;
+                    devtoolsWarning.style.display = 'flex';
+                }
+            } else {
+                if (devtoolsOpen) {
+                    devtoolsOpen = false;
+                    devtoolsWarning.style.display = 'none';
+                }
+            }
+        }
+
+        setInterval(checkDevTools, 500);
+
+        // 4. Disable drag
+        document.addEventListener('dragstart', e => e.preventDefault());
+
+        // 5. Disable text selection via CSS (already in body style)
+        // 6. Console warning
+        console.log(
+            '%c⚠️ STOP!',
+            'color: red; font-size: 48px; font-weight: bold;'
+        );
+        console.log(
+            '%cThis demo is protected. The source code is available for purchase on Gumroad.',
+            'font-size: 16px; color: #1A73E8;'
+        );
+    </script>
+</body>
+</html>
