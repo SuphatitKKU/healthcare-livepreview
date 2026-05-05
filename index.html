@@ -36,8 +36,7 @@
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             background: var(--bg-dark);
             color: var(--text-primary);
-            overflow-x: hidden;
-            overflow-y: auto;
+            overflow: hidden;
             -webkit-user-select: none;
             -moz-user-select: none;
             user-select: none;
@@ -49,7 +48,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 80px 40px 120px 40px; /* Enhanced vertical breathing room */
+            padding: 25px 40px; /* Locked viewport padding */
             position: relative;
             overflow: hidden;
         }
@@ -275,6 +274,10 @@
             border-color: var(--primary);
             background: rgba(26, 115, 232, 0.05);
             transform: translateY(-3px);
+        }
+
+        .btn-demo-mobile {
+            display: none; /* Hidden on desktop since the live interactive mockup is active */
         }
 
         /* ===== PHONE MOCKUP ===== */
@@ -528,14 +531,47 @@
 
         /* ===== RESPONSIVE ===== */
         @media (max-width: 900px) {
-            .hero-content {
-                flex-direction: column-reverse;
-                text-align: center;
-                gap: 40px;
+            body {
+                overflow-y: auto; /* Allow vertical scrolling on mobile devices */
             }
-            .hero-text h1 { font-size: 36px; }
-            .hero-buttons { justify-content: center; }
-            .phone-frame { width: 320px; height: 667px; }
+            .hero {
+                padding: 40px 20px 80px 20px; /* Elegant breathing room for mobile */
+                min-height: 100vh;
+            }
+            .hero-content {
+                flex-direction: column; /* Natural stack for mobile devices */
+                text-align: center;
+                gap: 32px;
+            }
+            .hero-text h1 { 
+                font-size: 38px; 
+                line-height: 1.2;
+                letter-spacing: -1.2px;
+            }
+            .hero-text p {
+                font-size: 16px;
+                margin-bottom: 24px;
+            }
+            .hero-buttons { 
+                justify-content: center; 
+                flex-direction: column; /* Stack buttons vertically for seamless thumb-reach */
+                gap: 12px;
+                width: 100%;
+                max-width: 340px;
+                margin: 32px auto 0 auto;
+            }
+            .btn {
+                width: 100%; /* Finger-friendly full width buttons on mobile */
+                justify-content: center;
+                padding: 15px 24px;
+                font-size: 15px;
+            }
+            .phone-container {
+                display: none; /* Hide bulky desktop mockup entirely on mobile viewports */
+            }
+            .btn-demo-mobile {
+                display: inline-flex !important; /* Make demo button highly visible on mobile */
+            }
             .stats { flex-wrap: wrap; gap: 32px; }
             .cta h2 { font-size: 32px; }
             .section-header h2 { font-size: 32px; }
@@ -591,6 +627,13 @@
                             <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
                         </svg>
                         Get MediPulse on Gumroad
+                    </a>
+                    <a href="app/index.html" class="btn btn-outline btn-demo-mobile">
+                        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                            <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                        </svg>
+                        Launch Live Demo
                     </a>
                 </div>
             </div>
